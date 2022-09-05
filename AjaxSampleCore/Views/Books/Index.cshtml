@@ -13,7 +13,8 @@
 
     @* JavaScript + Partial View *@
     <form id="form1">
-        @Html.AntiForgeryToken()
+        @* @Html.AntiForgeryToken() *@
+        <span>JavaScript + Partial View</span><br/>
         <input type="text" name="searchText">
         <input type="submit" value="検索">
     </form>
@@ -22,6 +23,7 @@
 
     @* JavaScript + Web API *@
     <form id="form2">
+        <span>JavaScript + Web API</span><br />
         <input type="text" id="searchText">
         <input type="submit" value="検索">
     </form>
