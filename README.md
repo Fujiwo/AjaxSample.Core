@@ -2,30 +2,30 @@
 
 ASP.NET Core で Ajax 利用して、部分ビューを取得したり、Web API を呼んだりするサンプル。
 
-* 2022年9月5日版
-* .NET のバージョン、参照パッケージなどは AjaxSampleCore.csproj を参照のこと。
+- 2022年9月5日版
+- .NET のバージョン、参照パッケージなどは AjaxSampleCore.csproj を参照のこと。
 
 ## 主なソースコード
 
-* wwwroot
-** js
-*** BooksIndex.js - Books.cshtml 用
-* Controllers
-** BooksController.cs - Books のコントローラー
-** BooksApiController.cs - Books API のコントローラー
-* Models - モデル クラス群
-** Author.cs
-** Publisher.cs
-** Book.cs
-** BookContext.cs
-* ViewModels
-** BookViewModel.cs - Part.cshtml 用
-* Views
-** Books
-*** Index.cshtml - 検索画面
-*** Part.cshtml - 部分ビュー
-* appsettings.json - 接続文字列などの設定
-* Program.cs - Main
+- wwwroot
+    - js
+        - BooksIndex.js - Books.cshtml 用
+- Controllers
+    - BooksController.cs - Books のコントローラー
+    - BooksApiController.cs - Books API のコントローラー
+- Models - モデル クラス群
+    - Author.cs
+    - Publisher.cs
+    - Book.cs
+    - BookContext.cs
+- ViewModels
+    - BookViewModel.cs - Part.cshtml 用
+- Views
+    - Books
+        - Index.cshtml - 検索画面
+        - Part.cshtml - 部分ビュー
+- appsettings.json - 接続文字列などの設定
+- Program.cs - Main
 
 ## 利用方法
 
