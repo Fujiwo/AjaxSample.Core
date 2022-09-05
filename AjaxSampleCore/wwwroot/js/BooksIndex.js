@@ -1,4 +1,6 @@
-﻿// JavaScript + Partial View
+﻿// 【変更】 Books.cshtml 用
+
+// JavaScript + Partial View
 
 function setResult(html) {
     $('#result').html(html);

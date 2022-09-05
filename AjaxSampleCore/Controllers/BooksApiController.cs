@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// 【変更】 Books API のコントローラー
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace AjaxSampleCore.Controllers
 {

@@ -1,4 +1,6 @@
-﻿//#define INITIALIZING
+﻿// 【変更】 Books のコントローラー
+
+//#define INITIALIZING
 
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;

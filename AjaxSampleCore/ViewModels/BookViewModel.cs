@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿// 【変更】 Part.cshtml 用
+
+using System.Text;
 
 namespace AjaxSampleCore.ViewModels
 {
