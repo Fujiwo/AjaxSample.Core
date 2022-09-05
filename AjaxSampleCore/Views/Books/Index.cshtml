@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "書籍一覧";
+}
+
+<h1>
+    @ViewData["Title"]
+</h1>
+
+<div>
+    <span>本の検索</span>
+
+    <hr>
+
+    @* JavaScript + Partial View *@
+    <form id="form1">
+        @Html.AntiForgeryToken()
+        <input type="text" name="searchText">
+        <input type="submit" value="検索">
+    </form>
+
+    <hr>
+
+    @* JavaScript + Web API *@
+    <form id="form2">
+        <input type="text" id="searchText">
+        <input type="submit" value="検索">
+    </form>
+
+    <hr>
+
+    <div id="result"></div>
+
+    <hr>
+</div>
+
+@section scripts {
+    @* JavaScript + Partial View *@
+    @* JavaScript + Web API *@
+    <script src="~/js/BooksIndex.js"></script>
+}

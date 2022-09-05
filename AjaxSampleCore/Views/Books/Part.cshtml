@@ -1,0 +1,30 @@
+﻿@using AjaxSampleCore.ViewModels
+@using System.Collections.Generic;
+@model IEnumerable<BookViewModel>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>タイトル</th>
+                <th>価格</th>
+                <th>発売日</th>
+                <th>出版社</th>
+                <th>著者</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in this.Model) {
+                <tr>
+                    <td><a href="@book.Url"><img src="@book.ImageUrl" alt="@book.Title" /></a></td>
+                    <td><a href="@book.Url">@book.Title</a></td>
+                    <td>&yen;@string.Format("{0:#,0}", book.Price)</td>
+                    <td>@book.ReleaseDate</td>
+                    <td>@book.Publisher</td>
+                    <td>@book.Authors</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
