@@ -1,4 +1,8 @@
-﻿@{
+﻿@using AjaxSampleCore.ViewModels
+@using System.Collections.Generic;
+@model IEnumerable<BookViewModel>
+
+@{
     ViewData["Title"] = "書籍一覧";
 }
 
@@ -30,13 +34,16 @@
 
     <hr>
 
-    <div id="result"></div>
+    <div id="result">
+        @* @Html.Partial("Part", Model); *@
+        @await Html.PartialAsync("Part", Model);
+    </div>
 
     <hr>
 </div>
 
 @section scripts {
-    @* JavaScript + Partial View *@
-    @* JavaScript + Web API *@
+        @* JavaScript + Partial View *@
+        @* JavaScript + Web API *@
     <script src="~/js/BooksIndex.js"></script>
 }

@@ -19,7 +19,8 @@
                 <tr>
                     <td><a href="@book.Url"><img src="@book.ImageUrl" alt="@book.Title" /></a></td>
                     <td><a href="@book.Url">@book.Title</a></td>
-                    <td>&yen;@string.Format("{0:#,0}", book.Price)</td>
+                    @* <td>&yen;@string.Format("{0:#,0}", book.Price)</td> *@
+                    <td>@book.Price</td>
                     <td>@book.ReleaseDate</td>
                     <td>@book.Publisher</td>
                     <td>@book.Authors</td>

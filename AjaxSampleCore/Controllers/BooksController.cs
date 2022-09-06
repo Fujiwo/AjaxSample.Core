@@ -23,17 +23,21 @@ namespace AjaxSampleCore.Controllers
 
         public BooksController(BookContext context) => this.context = context;
 
-#if INITIALIZING
         public async Task<IActionResult> Index()
-#else // INITIALIZING
-        public IActionResult Index()
-#endif // INITIALIZING
         {
 #if INITIALIZING
             await DatabaseInitializer.Run(context);
 #endif // INITIALIZING
 
-            return View();
+            var books = await context.Books
+                         .Include(book => book.Publisher)
+                         .Include(book => book.Authors)
+                         .OrderBy(book => book.Code)
+                         .Take(3)
+                         .ToArrayAsync();
+            var bookViewModels = books.Select(book => book.ToViewModel());
+
+            return View(bookViewModels);
         }
 
         //[HttpPost]
@@ -41,11 +45,11 @@ namespace AjaxSampleCore.Controllers
         public async Task<IActionResult> Search(string searchText)
         {
             var books = await context.Books
-                                      .Include(book => book.Publisher)
-                                      .Include(book => book.Authors)
-                                      .Where(book => book.Title.Contains(searchText))
-                                      .OrderBy(book => book.Code)
-                                      .ToArrayAsync();
+                                     .Include(book => book.Publisher)
+                                     .Include(book => book.Authors)
+                                     .Where(book => book.Title.Contains(searchText))
+                                     .OrderBy(book => book.Code)
+                                     .ToArrayAsync();
             var bookViewModels = books.Select(book => book.ToViewModel());
             return PartialView("Part", bookViewModels);
         }

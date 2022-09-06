@@ -24,7 +24,7 @@ namespace AjaxSampleCore.ViewModels
             => new BookViewModel {
                 Code        = @this.Code,
                 Title       = @this.Title,
-                Price       = @this.Price is null ? "未定" : $"{@this.Price:#,0}",
+                Price       = @this.Price is null ? "未定" : $"{@this.Price:#,0}円 (税込み)",
                 ReleaseDate = @this.ReleaseDate is null ? "未定" : @this.ReleaseDate.Value.ToShortDateString(),
                 Publisher   = @this.Publisher.Name,
                 Authors     = @this.Authors.Select(author => author.Name).Connect()
